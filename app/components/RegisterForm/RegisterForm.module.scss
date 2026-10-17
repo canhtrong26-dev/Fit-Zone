@@ -1,0 +1,89 @@
+$primary: #FF4500;
+$dark: #1a1a1a;
+$white: #ffffff;
+$text-gray: #666;
+$border-gray: #e0e0e0;
+
+.registerSection {
+  background: $white;
+  padding: 80px 60px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 900;
+  color: $dark;
+  margin-bottom: 10px;
+
+  span {
+    color: $primary;
+  }
+}
+
+.subtitle {
+  font-size: 15px;
+  color: $text-gray;
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input,
+.select {
+  padding: 14px 18px;
+  font-size: 14px;
+  border: 1px solid $border-gray;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+.select {
+  background: $white;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: $text-gray;
+  cursor: pointer;
+  text-align: left;
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+}
+
+.submitBtn {
+  background: $primary;
+  color: $white;
+  border: none;
+  padding: 15px 0;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-top: 10px;
+
+  &:hover {
+    background: #CC3700;
+  }
+}
