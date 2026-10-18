@@ -4,12 +4,13 @@ import styles from './RegisterForm.module.scss';
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    plan: 'Basic',
-    agree: false,
+      name: '',
+      email: '',
+      phone: '',
+      plan: 'Basic',
+      agree: false,
   });
+
 const [registered, setRegistered] = useState([]);
 const [csrfToken, setCsrfToken] = useState('');
 

@@ -2,7 +2,7 @@ import Tokens from 'csrf';
 import { NextResponse } from 'next/server';
 
 const tokens = new Tokens();
-const CSRF_SECRET = 'FITZONE_SECRET_KEY_2026';
+const CSRF_SECRET = process.env.CSRF_SECRET;
 
 export function csrfMiddleware(request) {
   const method = request.method;
