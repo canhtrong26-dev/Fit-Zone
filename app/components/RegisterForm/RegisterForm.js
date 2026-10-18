@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState,useEffect  } from 'react';
 import styles from './RegisterForm.module.scss';
 
 export default function RegisterForm() {
@@ -11,6 +11,14 @@ export default function RegisterForm() {
     agree: false,
   });
 const [registered, setRegistered] = useState([]);
+const [csrfToken, setCsrfToken] = useState('');
+
+
+useEffect(() => {
+  fetch('/api/register')
+    .then((res) => res.json())
+    .then((data) => setCsrfToken(data.csrfToken));
+}, []);
 
 
   const handleChange = (e) => {
@@ -28,7 +36,10 @@ const [registered, setRegistered] = useState([]);
   try {
     const response = await fetch('/api/register', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 
+      'application/json',
+      'x-csrf-token': csrfToken,
+    },
       body: JSON.stringify(formData),
     });
 
