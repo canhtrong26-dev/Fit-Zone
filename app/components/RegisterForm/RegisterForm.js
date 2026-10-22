@@ -12,13 +12,12 @@ export default function RegisterForm() {
   });
 
 const [registered, setRegistered] = useState([]);
-const [csrfToken, setCsrfToken] = useState('');
+
+
 
 
 useEffect(() => {
   fetch('/api/register')
-    .then((res) => res.json())
-    .then((data) => setCsrfToken(data.csrfToken));
 }, []);
 
 
@@ -39,7 +38,6 @@ useEffect(() => {
       method: 'POST',
       headers: { 'Content-Type': 
       'application/json',
-      'x-csrf-token': csrfToken,
     },
       body: JSON.stringify(formData),
     });
